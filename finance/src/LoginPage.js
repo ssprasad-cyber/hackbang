@@ -41,20 +41,30 @@ const LoginPage = () => {
     console.log('Logging in with Google');
   };
 
+  const handleFacebookLogin = () => {
+    // Add your Facebook login API call here
+    // Example:
+    // window.location.href = 'YOUR_FACEBOOK_LOGIN_REDIRECT_URL';
+    console.log('Logging in with Facebook');
+  };
+
   return (
-    <div className="login-container">
+    <div className='oh'>
+    <div className="login-container" style={{ backgroundColor: '#f0f0f0', padding: '20px' }}>
       <h1>Login</h1>
-      {error && <div className="error">{error}</div>}
+      {error && <div className="error" style={{ color: 'red' }}>{error}</div>}
       <form>
         <label>Email:</label>
         <input type="email" value={email} onChange={handleEmailChange} />
         <label>Password:</label>
         <input type="password" value={password} onChange={handlePasswordChange} />
-        <button type="button" onClick={handleEmailLogin}>Login with Email</button>
+        <button type="button" onClick={handleEmailLogin}>Login </button>
       </form>
       <div>
         <button type="button" onClick={handleGoogleLogin}>Continue with Google</button>
+        <button type="button" onClick={handleFacebookLogin}>Continue with Facebook</button>
       </div>
+    </div>
     </div>
   );
 };

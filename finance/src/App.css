@@ -1,11 +1,14 @@
 /* LoginPage.css */
-
+.oh{
+  background-color: rgb(173, 207, 236);
+}
 .login-container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  text-align: center; /* Center the content horizontally */
 }
 
 .error {
@@ -37,13 +40,17 @@ button {
   border-radius: 5px;
   background-color: #007bff;
   color: #fff;
+  display: block;
+  margin: 10 auto;
+  
 }
 
 button:hover {
   background-color: #0056b3;
+  color: cyan;
 }
 
 button:active {
-  background-color: #0056b3;
-  transform: translateY(1px);
+  background-color: #1475de;
+  transform: translateY(2px);
 }
