@@ -2,11 +2,14 @@
 
 import React, { useState } from 'react';
 import './LoginPage.css'; // Import CSS file
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -14,6 +17,10 @@ const LoginPage = () => {
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   const handleEmailLogin = () => {
@@ -49,22 +56,23 @@ const LoginPage = () => {
   };
 
   return (
-    <div className='oh'>
-    <div className="login-container" style={{ backgroundColor: '#f0f0f0', padding: '20px' }}>
+    <div className="login-container">
       <h1>Login</h1>
-      {error && <div className="error" style={{ color: 'red' }}>{error}</div>}
+      {error && <div className="error">{error}</div>}
       <form>
         <label>Email:</label>
         <input type="email" value={email} onChange={handleEmailChange} />
         <label>Password:</label>
-        <input type="password" value={password} onChange={handlePasswordChange} />
+        <div className="input-group">
+          <input type={showPassword ? "text" : "password"} value={password} onChange={handlePasswordChange} />
+          <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-toggle" onClick={togglePasswordVisibility} />
+        </div>
         <button type="button" onClick={handleEmailLogin}>Login </button>
       </form>
       <div>
         <button type="button" onClick={handleGoogleLogin}>Continue with Google</button>
         <button type="button" onClick={handleFacebookLogin}>Continue with Facebook</button>
       </div>
-    </div>
     </div>
   );
 };

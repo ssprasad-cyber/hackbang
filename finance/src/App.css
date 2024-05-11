@@ -1,14 +1,12 @@
 /* LoginPage.css */
-.oh{
-  background-color: rgb(173, 207, 236);
-}
+
 .login-container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  text-align: center; /* Center the content horizontally */
+  background-color: #f0f0f0;
 }
 
 .error {
@@ -32,6 +30,28 @@ input {
   border-radius: 5px;
 }
 
+.password-input {
+  position: relative;
+}
+
+.password-input input {
+  width: calc(100% - 30px); /* Adjust width to accommodate icon */
+  padding-right: 30px; /* Ensure space for the icon */
+}
+
+.password-input .eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ccc;
+}
+
+.password-input .eye-icon:hover {
+  color: #007bff; /* Change color on hover */
+}
+
 button {
   padding: 10px 20px;
   margin-right: 10px;
@@ -40,14 +60,10 @@ button {
   border-radius: 5px;
   background-color: #007bff;
   color: #fff;
-  display: block;
-  margin: 10 auto;
-  
 }
 
 button:hover {
   background-color: #0056b3;
-  color: cyan;
 }
 
 button:active {
