@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Approval Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Loan Approval Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="married">Married (Yes/No):</label>
+        <input type="text" name="married"><br>
+        
+        <!-- Add other input fields similarly -->
+        
+        <input type="submit" value="Submit">
+    </form>
+    {% if prediction_text %}
+        <p>{{ prediction_text }}</p>
+    {% endif %}
+</body>
+</html>
